@@ -20,9 +20,9 @@ const animalFoods = {
 //Object.values() ACCESSES JUST THE VALUES AND STORES THEM IN AN ARRAY.
 //Object.entries() ACCESSES BOTH AND STORES EACH KEY/VALUE PAIR INSIDE OF A SUBARRAY WITHIN A LARGER ARRAY.
 //TRY COMMENTING IN LINES 23, 24, AND 25, TO SEE HOW THEY LOOK WHEN USED ON THE "animalFoods" OBJECT.
-// console.log("keys: ", Object.keys(animalFoods)); //👀
-// console.log("values: ", Object.values(animalFoods)); //👀
-// console.log("entries: ", Object.entries(animalFoods)); //👀
+//console.log("keys: ", Object.keys(animalFoods)); //👀
+//console.log("values: ", Object.values(animalFoods)); //👀
+//console.log("entries: ", Object.entries(animalFoods)); //👀
 // ^ COMMENT THESE BACK OUT WHEN YOU'RE DONE ^
 
 //<-----------------------------------Looping Using Object.keys and for...of--------------------------------------------------->
@@ -30,7 +30,7 @@ const animalFoods = {
 //1️⃣ OKAY, NOW ONTO THE TUTORIAL: I WANT TO MODIFY THE VALUES IN MY "animalFoods" OBJECT WHOSE KEYS MEET A CERTAIN CONDITION.
 //TO DO THIS, WE'LL HAVE TO LOOP THROUGH THE KEYS. WE CAN USE A for...of LOOP AND 🔑Object.keys()🔑!
 //LET'S SEE HOW TO MARK EACH "animalFoods" VALUE THAT CORRESPONDS TO A KEY BEGINNING WITH THE LETTER "c".
-// console.log("before modifying the 'animalFoods' object->", animalFoods); //👀
+console.log("before modifying the 'animalFoods' object->", animalFoods); //👀
 
 for (let animalName of Object.keys(animalFoods)) {
   if (animalName[0] === "c") {
@@ -39,10 +39,10 @@ for (let animalName of Object.keys(animalFoods)) {
   }
 }
 
-// console.log(
-//   "after marking every animalFoods value whose key begins with a 'c' ->",
-//   animalFoods
-// ); //👀
+console.log(
+  "after marking every animalFoods value whose key begins with a 'c' ->",
+  animalFoods
+); //👀
 
 //COMMENT IN AND TAKE A LOOK AT THE TWO console.logs ON LINE 33 AND LINE 42-45.
 //PAUSE HERE AND RUN THIS FILE USING THE COMMAND "node src/3-looping-through-objects.js"
@@ -63,7 +63,7 @@ for (let animalName in animalFoods) {
 
 //TRY COMMENTING IN LINE 66 TO console.log THE "animalFoods" OBJECT AGAIN AFTER MAKING THIS SECOND CHANGE.
 //THEN RUN THIS FILE AGAIN AND SEE THE MODIFIED "animalFoods" OBJECT.
-// console.log("after marking non-'c' animals with '!!!' ->", animalFoods); //👀
+console.log("after marking non-'c' animals with '!!!' ->", animalFoods); //👀
 
 //<-----------------------------------Closer Look at Accessing Values--------------------------------------------------->
 
@@ -80,7 +80,7 @@ for (let animalName in animalFoods) {
 
 //TRY COMMENTING IN LINE 83 TO console.log THE "animalFoods" OBJECT AGAIN AFTER MAKING THIS MOST RECENT CHANGE.
 //THEN RUN THIS FILE AGAIN AND SEE THE MODIFIED "animalFoods" OBJECT.
-// console.log("after modifying based on VALUES containing 'o' ->", animalFoods); //👀
+console.log("after modifying based on VALUES containing 'o' ->", animalFoods); //👀
 
 //🐮 NOW IT'S YOUR TURN TO PRACTICE LOOPING THROUGH THE KEYS OF AN OBJECT.
 //COMPLETE THE THREE PRACTICE PROBLEMS BELOW...
@@ -121,7 +121,14 @@ for (let animalName in animalFoods) {
  *   }
  *
  */
-function doubleBasedOnKey() {}
+function doubleBasedOnKey(obj) {
+  for(let animal in obj){
+    if (animal[0]==="c"){
+        obj[animal]+=obj[animal];
+    }
+  }
+return obj;
+}
 
 /**
  *
@@ -156,7 +163,14 @@ function doubleBasedOnKey() {}
  *   }
  *
  */
-function deleteIfKeyContainsChar() {}
+function deleteIfKeyContainsChar(petObj,letter) {
+  for(let pet in petObj){
+    if(pet.includes(letter)){
+        delete petObj[pet];
+    }
+  }
+  return petObj;
+}
 
 /**
  *
@@ -195,7 +209,14 @@ function deleteIfKeyContainsChar() {}
  *   }
  *
  */
-function markIfValueContainsChar() {}
+function markIfValueContainsChar(petObj,letter) {
+  for(let pet in petObj){
+    if (petObj[pet].includes(letter)){
+      petObj[pet]+="!!!";
+    }
+  }
+  return petObj;
+}
 
 module.exports = {
   doubleBasedOnKey,

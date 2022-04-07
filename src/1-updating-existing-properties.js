@@ -32,7 +32,7 @@ city.sizeInSqMiles = 302.6;
 
 //TRY COMMENTING IN LINE 35 TO console.log THE "city" OBJECT AGAIN AFTER THIS SECOND UPDATE.
 //THEN RUN THIS FILE AGAIN AND SEE THE UPDATED "size" PROPERTY ON THE "city" OBJECT.
-// console.log("after updating 'size' key ->", city); //👀
+console.log("after updating 'size' key ->", city); //👀
 
 //<-----------------------------------Using Bracket Notation--------------------------------------------------->
 
@@ -46,7 +46,7 @@ city[keyToUpdate] = updatedValue; //<- not too hard! Just use brackets instead o
 
 //TRY COMMENTING IN LINE 49 TO console.log THE "city" OBJECT AGAIN AFTER THIS LAST UPDATE.
 //THEN RUN THIS FILE AGAIN AND SEE THE UPDATED "state" KEY ON THE "city" OBJECT.
-// console.log("after updating 'state' key ->", city); //👀
+ console.log("after updating 'state' key ->", city); //👀
 
 //<-----------------------------------Your Turn--------------------------------------------------->
 
@@ -85,8 +85,10 @@ city[keyToUpdate] = updatedValue; //<- not too hard! Just use brackets instead o
  *   }
  *
  */
-function updateVisitedProperty() {}
-
+function updateVisitedProperty(capital) {
+capital.visited=true;
+return capital;
+}
 /**
  *
  *
@@ -120,8 +122,10 @@ function updateVisitedProperty() {}
  *   }
  *
  */
-function updateInputtedProperty() {}
-
+function updateInputtedProperty(city,name,cityName) {
+city[name]=cityName;
+return city;
+} 
 /**
  *
  *
@@ -162,7 +166,10 @@ function updateInputtedProperty() {}
  *   }
  *
  */
-function updateAnyProperty() {}
+function updateAnyProperty(city) {
+  city.name="corndog";
+  return city;
+}
 
 module.exports = {
   updateVisitedProperty,

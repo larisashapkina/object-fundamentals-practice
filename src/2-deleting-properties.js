@@ -33,7 +33,7 @@ delete cake.layers;
 
 //TRY COMMENTING IN LINE 36 TO console.log THE "cake" OBJECT AGAIN AFTER DELETING ANOTHER KEY.
 //THEN RUN THIS FILE AGAIN AND SEE THE MODIFIED "cake" OBJECT.
-// console.log("after deleting 'layers' key ->", cake); //👀
+console.log("after deleting 'layers' key ->", cake); //👀
 
 //<-----------------------------------Using Bracket Notation--------------------------------------------------->
 
@@ -46,7 +46,7 @@ delete cake[propertyToDelete]; //<- not too hard! Just use brackets instead of d
 
 //TRY COMMENTING IN LINE 49 TO console.log THE "cake" OBJECT AGAIN AFTER DELETING ANOTHER PROPERTY.
 //THEN RUN THIS FILE AGAIN AND SEE THE MODIFIED "cake" OBJECT.
-// console.log("after deleting 'costInDollars' key ->", cake); //👀
+console.log("after deleting 'costInDollars' key ->", cake); //👀
 
 //<-----------------------------------Your Turn--------------------------------------------------->
 
@@ -86,7 +86,10 @@ delete cake[propertyToDelete]; //<- not too hard! Just use brackets instead of d
  *   }
  *
  */
-function deleteSprinklesProperty() {}
+function deleteSprinklesProperty(cake) {
+  delete cake.sprinkles;
+  return cake;
+}
 
 /**
  *
@@ -121,7 +124,10 @@ function deleteSprinklesProperty() {}
  *   }
  *
  */
-function deleteInputtedProperty() {}
+function deleteInputtedProperty(cake,key) {
+  delete cake[key];
+  return cake;
+}
 
 /**
  *
@@ -160,7 +166,10 @@ function deleteInputtedProperty() {}
  *   }
  *
  */
-function deleteAnyProperty() {}
+function deleteAnyProperty(cake) {
+  delete cake.shape;
+  return cake;
+}
 
 module.exports = {
   deleteSprinklesProperty,
